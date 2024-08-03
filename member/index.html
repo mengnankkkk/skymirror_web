@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>人物介绍</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="https://imgbed.mengnankk.asia/202407101803086.jpg">
+  <style>
+    :root {
+      --background-color: #2c3e50;
+      --border-color: #7591AD;
+      --text-color: #34495e;
+      --color1: #EC3E27;
+      --color2: #fd79a8;
+      --color3: #0984e3;
+      --color4: #00b894;
+      --color5: #fdcb6e;
+      --color6: #e056fd;
+      --color7: #F97F51;
+      --color8: #BDC581;
+      --a_border_color: #86a3b3;
+      --h2_border_color: #8ea2b8;
+      --a_hover_background_color: #86a3b3;
+      --font_color: #e8f6fd;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      font-size: 14px;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      background-color: var(--background-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Montserrat', sans-serif, Arial, 'Microsoft Yahei';
+    }
+
+    .navbar {
+      width: 100%;
+      background-color: transparent; /* 修改为透明 */
+      padding: 10px 0;
+      text-align:  left;
+    }
+
+    .navbar a {
+      color: var(--font_color);
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin: 0 10px;
+      transition: background-color 0.3s ease;
+      display: inline-block; /* 添加这行以便设置宽度和高度 */
+      width: 40px; /* 设置宽度 */
+      height: 40px; /* 设置高度 */
+      line-height: 40px; /* 垂直居中 */
+      position: relative; /* 相对定位，以便子元素绝对定位 */
+    }
+
+    .navbar a.home-icon::before {
+      content: '\1F3E0'; /* Unicode 图标 */
+      font-size: 24px; /* 图标大小 */
+      position: absolute; /* 绝对定位，相对于父元素 */
+      top: 50%; /* 上下居中 */
+      left: 50%; /* 左右居中 */
+      transform: translate(-50%, -50%); /* 居中处理 */
+    }
+
+    .navbar a:hover {
+      background-color: var(--a_hover_background_color);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 700px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .card {
+      flex: 0 0 calc(33.33% - 40px); /* Adjust this value to set the number of cards per row */
+      position: relative;
+
+      height: 200px;
+      overflow: hidden;
+      margin: 20px;
+      background-color: var(--border-color);
+      border-radius: 20px;
+      display: flex;
+      
+      align-items: center;
+      flex-direction: column;
+      box-shadow: 0 0 30px #2c2c2c;
+      color: var(--font_color);
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .photo {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0px;
+      border-radius: 0%;
+      overflow: hidden;
+      transition: 0.5s;
+    }
+
+    .photo::before {
+      position: absolute;
+      content: '';
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to top, #333, transparent);
+    }
+
+    .card:hover .photo::before {
+      display: none;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .card:hover .photo {
+      width: 120px;
+      height: 120px;
+      top: 30px;
+      border-radius: 50%;
+      box-shadow: 0 0 20px #111;
+    }
+
+    h1 {
+      position: absolute;
+      top: 380px;
+      transition: 0.5s;
+    }
+
+    .card:hover h1 {
+      top: 170px;
+    }
+
+    h2 {
+      margin-top: 220px;
+      width: 80%;
+      font-weight: normal;
+      text-align: center;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--h2_border_color);
+    }
+
+    p {
+      width: 90%;
+      text-indent: 2em;
+      font-size: 16px;
+      margin-bottom: 10px;
+      line-height: 30px;
+    }
+
+    a {
+      color: var(--font_color);
+      text-decoration: none;
+      padding: 12px 36px;
+      border: 1px solid var(--a_border_color);
+      border-radius: 8px;
+    }
+
+    a:hover {
+      color: #fff;
+      background-color: var(--a_hover_background_color);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <a href="../index.html" class="home-icon"></a> <!-- 添加home-icon类 -->
+  </div>
+  <div class="container">
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/xinyuan.jpg" alt="xinyuan">
+      </div>
+      <h1>xinyuan</h1>
+      <h2>https://websec.space</h2>
+      <p></p>
+      <a href="https://websec.space">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/Wanan.jpg" alt="Wanan">
+      </div>
+      <h1>Wanan</h1>
+      <h2>https://www.wanan.red</h2>
+      <p></p>
+      <a href="https://www.wanan.red">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/css0k.jpg" alt="css0k">
+      </div>
+      <h1>css0k</h1>
+      <h2></h2>
+      <p></p>
+      <a href="#">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/Charmersix.jpg" alt="Charmerisx">
+      </div>
+      <h1>Charmerisx</h1>
+      <h2>charmersix.icu</h2>
+      <p>21级老登</p>
+      <a href="https://charmersix.icu">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/bandit.jpg" alt="bandit">
+      </div>
+      <h1>bandit</h1>
+      <h2></h2>
+      <p></p>
+      <a href="#">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/Super.jpg" alt="Super">
+      </div>
+      <h1>Super</h1>
+      <h2></h2>
+      <p></p>
+      <a href="#">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/Ghbbhc.jpg" alt="Ghbbhc">
+      </div>
+      <h1>Ghbbhc</h1>
+      <h2></h2>
+      <p></p>
+      <a href="#">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/Scofield_Lee.jpg" alt="Scofield_Lee">
+      </div>
+      <h1>Scofield_Lee</h1>
+      <h2>https://scofield.top</h2>
+      <p></p>
+      <a href="https://scofield.top">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/Anz.jpg" alt="Anz">
+      </div>
+      <h1>Anz</h1>
+      <h2></h2>
+      <p></p>
+      <a href="#">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/Kangsir.jpg" alt="Kangsir">
+      </div>
+      <h1>Kangsir</h1>
+      <h2>https://www.yuque.com/kangsir_</h2>
+      <p></p>
+      <a href="https://www.yuque.com/kangsir_">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/eXVtaW5n.jpg" alt="eXVtaW5n">
+      </div>
+      <h1>eXVtaW5n</h1>
+      <h2>nanguawuming.github.io</h2>
+      <p>“你以后想成为什么样的人？”</p>
+      <a href="https://nanguawuming.github.io">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/0day_joker.jpg" alt="0day_joker">
+      </div>
+      <h1>0day_joker</h1>
+      <h2>internetjoker.top</h2>
+      <p>23级睡魔，狂睡不醒</p>
+      <a href="https://internetjoker.top">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/Kiss_me.jpg" alt="Kiss_me">
+      </div>
+      <h1>Kiss_me</h1>
+      <h2>sssxc.xyz</h2>
+      <p></p>
+      <a href="https://sssxc.xyz">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/mengnankk.jpg" alt="mengnankk">
+      </div>
+      <h1>mengnankk</h1>
+      <h2>https://mengnankk.asia</h2>
+      <p></p>
+      <a href="https://home.mengnankk.asia">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/ustinian-an.jpg" alt="ustinian-an">
+      </div>
+      <h1>ustinian-an</h1>
+      <h2>https://linlimei.top</h2>
+      <p></p>
+      <a href="https://linlimei.top">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/GaGa.jpg" alt="GaGa">
+      </div>
+      <h1>GaGa</h1>
+      <h2>https://tt-gaga.github.io</h2>
+      <p>老咸鱼</p>
+      <a href="https://tt-gaga.github.io">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/iris.jpg" alt="iris">
+      </div>
+      <h1>iris</h1>
+      <h2>https://iris217.wiki</h2>
+      <p></p>
+      <a href="https://iris217.wiki">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/yucale.jpg" alt="yucale">
+      </div>
+      <h1>yucale</h1>
+      <h2>https://yucale.wiki</h2>
+      <p>嘿嘿嘿嘿嘿嘿</p>
+      <a href="https://yucale.wiki">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/yesits me.jpg" alt="yesits me">
+      </div>
+      <h1>reflectieon</h1>
+      <h2></h2>
+      <p></p>
+      <a href="https://yesits.me">了解更多</a>
+    </div>
+    
+    <div class="card">
+      <div class="photo">
+        <img src="./img/daybr3ak.jpg" alt="daybr3ak">
+      </div>
+      <h1>daybr3ak</h1>
+      <h2></h2>
+      <p></p>
+      <a href="#">了解更多</a>
+    </div>  <!-- Additional cards go here -->
+  </div>
+</body>
+
+</html>
